@@ -5,12 +5,12 @@ function success($result = null, string $msg = 'ok'): \think\response\Json
     $aData = [
         'code' => 0,
         'msg' => $msg,
-        'result' => $result,
+        'result' => $result ?? [],
     ];
     return json($aData);
 }
 
-function error(int $code, string $msg, array $result = []): \think\response\Json
+function error(int $code, string $msg): \think\response\Json
 {
     if (!$code) {
         $code = \funnymudpee\thinkphp\result\Code::INTERNAL_SERVER_ERROR;
@@ -19,7 +19,6 @@ function error(int $code, string $msg, array $result = []): \think\response\Json
     $data = [
         'code' => $code,
         'msg' => $msg,
-        'result' => $result,
     ];
     return json($data, $c);
 }
