@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "funnymudpee\\thinkphp\\result": "src"
+      "funnymudpee\\thinkphp\\result\\": "src"
     },
     "files": [
       "src/helper.php"
